@@ -18,7 +18,7 @@ _Table of contents_
  
 
 # **1. Hadoop Lakehouse Ecosystem**
-<img src=""  width="800" height="400" />
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/56d37d82-6ca3-4c76-af90-90ab3be186fe)
 
 Introduce some tools for project:
 

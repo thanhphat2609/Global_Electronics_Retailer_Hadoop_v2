@@ -115,7 +115,7 @@ class HDFSUtils:
         day = executionDate[2]
 
         # Base path on HDFS
-        base_path = f'hdfs://localhost:9000/lakehouse/LH_{project}/Files/{tablename}/year={year}/month={month}/day={day}'
+        base_path = f'hdfs://localhost:9000/lakehouse/LH_{project}/Files/Bronze/{tablename}/year={year}/month={month}/day={day}'
 
         # Get all paths in HDFS
         hdfs_paths = os.popen(f"hadoop fs -ls {base_path}").read()
@@ -133,7 +133,7 @@ class HDFSUtils:
         new_version = max(versions)
 
         # Get new path
-        new_path_version = f'hdfs://localhost:9000/lakehouse/{project}/Files/{tablename}/year={year}/month={month}/day={day}/{tablename}_{year}_{month}_{day}-version_{new_version}.parquet'
+        new_path_version = f'hdfs://localhost:9000/lakehouse/LH_{project}/Files/Bronze/{tablename}/year={year}/month={month}/day={day}/{tablename}_{year}_{month}_{day}-version_{new_version}.parquet'
 
         
         return new_path_version

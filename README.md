@@ -33,3 +33,17 @@ Introduce some tools for project:
 - **Apache Superset**: Apache Superset is an open-source business intelligence (BI) tool that offers a rich set of visualization options and features for exploring and analyzing data. It supports a wide range of data sources and allows users to create interactive dashboards and data exploration workflows.
 
 - **Delta Lake**: Delta Lake is an open-source storage layer that brings reliability to data lakes. Similar to Hadoop and HDFS, which provide distributed storage and processing capabilities, Delta Lake enhances the reliability and performance of large-scale data processing and analytics.
+
+
+# **2. Data Architecture**
+
+## 2.1. Conceptual Architecture base on Hadoop Ecosystem
+![Items (1)](https://github.com/thanhphat2609/Global_Super_Store/assets/84914537/600e237e-01d7-4c09-891c-1551acfbc45e)
+
+- **Data Source**: These include the various systems from which data is **extracted**, such as: Relational Database, File systems, SaaS applications, Real-time data.
+- **Staging**: Extract data from Source into Files of Datalake (csv, parquet).
+- **Data Warehouse**: Data in the data warehouse is organized according to a unified data model, which makes it easy to query and analyze.
+- **Analytics**: This last step we will use tools and techniques to analyze the data in the data warehouse, such as: Power BI, Tableau, ..
+
+## 2.2. Physical Architecture
+![Hadoop_Architecture_Lakehouse](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/141325ba-bd95-4bde-b7b5-1f64923ae2c1)

@@ -5,7 +5,7 @@ class LogUtils:
     def __init__(self) -> None:
         pass
 
-    def log_data(self, batch_id, task_name, source_connection, dbname, table_name,
+    def log_data(self, batch_id, task_name, source_connection, dbname, table_name, target_table,
                  start_time, end_time, src_rows_read, numInserted, numUpdated, columnMissing, 
                  columnNull, error, status, phase, types, spark):
         """
@@ -36,6 +36,7 @@ class LogUtils:
                         .add("SourceConnection", types.StringType(), True) \
                         .add("SourceDatabase", types.StringType()) \
                         .add("SourceTable", types.StringType(), True) \
+                        .add("TargetTable", types.StringType(), True) \
                         .add("StartTime", types.StringType(), True) \
                         .add("EndTime", types.StringType(), True) \
                         .add("SourceRowsRead", types.IntegerType(), True) \
@@ -48,7 +49,7 @@ class LogUtils:
                         .add("Phase", types.StringType(), True)
 
         # Create new row
-        new_log_row = [types.Row(batch_id, task_name, source_connection, dbname, table_name, start_time, end_time, 
+        new_log_row = [types.Row(batch_id, task_name, source_connection, dbname, table_name, target_table, start_time, end_time, 
                                 src_rows_read, numInserted, numUpdated, status, columnMissing, 
                                 columnNull, error, phase)]
         

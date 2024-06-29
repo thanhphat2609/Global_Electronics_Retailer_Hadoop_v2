@@ -14,7 +14,7 @@ class Metadata:
             table: Table store metadata_action
 
         - Return
-            new_path_version
+            client connection to MongoDB
         """
 
 
@@ -44,12 +44,13 @@ class Metadata:
             phase: What phase for get exact job
 
         - Return
-            new_path_version
+            metadata_action
         """
 
         from bson.json_util import dumps
         import json
         from pymongo import MongoClient
+        from airflow.models import Variable
 
         client = self.connect_metadata(username, password, database)
 
@@ -59,31 +60,15 @@ class Metadata:
         # Created or Switched to collection names: Metadata.config_table 
         collection = db[table] 
 
-
-        # Read Metadata
-        connection_mongo = "mongodb+srv://admin:admin@mongo-cluster.r5jfxdp.mongodb.net/metadata?retryWrites=true&w=majority&appName=mongo-cluster"
-
-        # Connection to MongoDB  
-        try: 
-            mongo_uri = connection_mongo
-            client = MongoClient(mongo_uri)
-            print("Connected successfully!!!") 
-        except:   
-            print("Could not connect to MongoDB") 
-
-        # Connect Database 
-        db = client.metadata 
-        
-        # Connect Metadata.config_table 
-        collection = db.config_table 
-
         # Query data with phase: CusDB -> Bronze
-        cursor = collection.find({phase})
+        cursor = collection.find({"phase": phase})
 
         # Convert to json_data
         json_data = dumps(cursor, indent = 2)
 
         metadata_action = json.loads(json_data)
+
+        Variable.set(key = "metadata_action", value = metadata_action, serialize_json = True)
 
         return metadata_action
 
@@ -101,7 +86,7 @@ class Metadata:
             data_to_insert: Insert data
 
         - Return
-            new_path_version
+            insert new value
         """
 
         client = self.connect_metadata(username, password, database)

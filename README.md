@@ -11,10 +11,7 @@ _Table of contents_
   * [3.3. Building Orchestration](#33-building-orchestration)
 - [**4. Result**](#4-result)
   * [4.1. Pipeline](#41-pipeline)
-  * [4.2. Datalake](#42-datalake)
-  * [4.3. Data Warehouse](#43-data-warehouse)
-  * [4.4. Log Pipeline and Data](#44-log-pipeline-and-data)
-  * [4.5. Superset Report](#45-superset-report)
+  * [4.2. Lakehouse](#42-lakehouse)
  
 
 # **1. Hadoop Lakehouse Ecosystem**
@@ -47,3 +44,61 @@ Introduce some tools for project:
 
 ## 2.2. Physical Architecture
 ![Hadoop_Architecture_Lakehouse](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/141325ba-bd95-4bde-b7b5-1f64923ae2c1)
+
+
+
+## 3.1. Dataset Diagram
+![DataSetDiagram](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop/assets/84914537/e34766d2-8b75-4e32-8445-7bc4dcbd610e)
+
+**Data_Dictionary**
+[Global_Electronics_Retailer_Data_Dictonary](https://docs.google.com/spreadsheets/d/149kBQERsr9I5RbcBwBhVJdaATtK1lOVu/edit?usp=sharing&ouid=104868242064941170355&rtpof=true&sd=true)
+
+
+## 3.2. Building HDFS
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/763fb1b7-c735-4fff-b40a-d454368b8dc1)
+
+
+## 3.3. Building Orchestration
+- **Pipeline Airflow**
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/048b1769-5045-4ba2-bbd9-35c146fa1cc9)
+
+- **Metadata in MongoDB**
+
+
+ 
+- **Notebook, Pythongs run ETL**
+
+| **Python Files**          | **Meaning** |
+|-------------------|-------------- |
+| NB_source_to_bronze.ipynb | Notebook for extract data from MySQL and load to Files in Lakehouse |
+| NB_output_phase_1.ipynb | Notebook store result for phase 1 (CusDB -> Bronze) |
+| NB_bronze_to_silver.ipynb | Notebook for transformation bronze data from Files and load to Silver as Delta |
+| NB_output_phase_2.ipynb | Notebook store result for phase 2 (Bronze -> Silver) |
+| NB_gold_create_delta.ipynb | Notebook crete delta table for Gold layer for Analytics |
+| PL_Master.py | Define task for Airflow run |
+
+
+- **Modules define by Python**
+| **Python Files**          | **Meaning** |
+|-------------------|-------------- |
+| Extraction.py | Class Extraction for extract data |
+| Transformation.py | Class Transformation for check update, insert, transformation data |
+| Load.py | Class Load to load data to table, check exist table in Hive |
+| HadoopEcosystem.py | Class HadoopEcosystem for start service of Hadoop eco |
+| HDFSUtils.py | Class HDFSUtils for HDFS in Hadoop |
+| LogUtils.py | Class LogUtils pipeline and task |
+| Metadata.py | Connect and read metadata table from MongoDB for run ETL |
+
+# **4. Result**
+
+## 4.1. Pipeline
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/69f93519-01e2-4aa8-8449-3019c631bb6e)
+
+## 4.2 Lakehouse
+- **Bronze**
+
+- **Silver**
+
+- **Log**
+
+- **Gold**

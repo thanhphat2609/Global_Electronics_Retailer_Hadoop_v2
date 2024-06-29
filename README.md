@@ -103,6 +103,7 @@ Introduce some tools for project:
 
 
 - **Log**
+
 **HDFS store**
 ![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/9e404ef3-ee5d-4013-b0da-ba0d9136c311)
 

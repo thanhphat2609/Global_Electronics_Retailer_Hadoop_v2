@@ -46,7 +46,6 @@ Introduce some tools for project:
 ![Hadoop_Architecture_Lakehouse](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/141325ba-bd95-4bde-b7b5-1f64923ae2c1)
 
 
-
 ## 3.1. Dataset Diagram
 ![DataSetDiagram](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop/assets/84914537/e34766d2-8b75-4e32-8445-7bc4dcbd610e)
 
@@ -63,9 +62,9 @@ Introduce some tools for project:
 ![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/048b1769-5045-4ba2-bbd9-35c146fa1cc9)
 
 - **Metadata in MongoDB**
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/9734af75-915f-4a2e-9cc2-7db26dad6ea5)
 
 
- 
 - **Notebook, Pythongs run ETL**
 
 | **Python Files**          | **Meaning** |
@@ -79,6 +78,7 @@ Introduce some tools for project:
 
 
 - **Modules define by Python**
+
 | **Python Files**          | **Meaning** |
 |-------------------|-------------- |
 | Extraction.py | Class Extraction for extract data |
@@ -87,7 +87,7 @@ Introduce some tools for project:
 | HadoopEcosystem.py | Class HadoopEcosystem for start service of Hadoop eco |
 | HDFSUtils.py | Class HDFSUtils for HDFS in Hadoop |
 | LogUtils.py | Class LogUtils pipeline and task |
-| Metadata.py | Connect and read metadata table from MongoDB for run ETL |
+| Metadata.py | Class connect and read metadata table from MongoDB for run ETL |
 
 # **4. Result**
 
@@ -96,9 +96,20 @@ Introduce some tools for project:
 
 ## 4.2 Lakehouse
 - **Bronze**
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/7fd23370-53e7-4a35-8448-9f616558719d)
 
 - **Silver**
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/c36afe2c-9902-4db0-a661-10f13879a4d3)
+
 
 - **Log**
+**HDFS store**
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/9e404ef3-ee5d-4013-b0da-ba0d9136c311)
+
+**Result**
+![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/552e0aa2-64a6-4362-a03f-1dfe3abb8468)
+
 
 - **Gold**
+
+Not updated yet.

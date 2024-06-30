@@ -65,7 +65,7 @@ Introduce some tools for project:
 ![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/9734af75-915f-4a2e-9cc2-7db26dad6ea5)
 
 
-- **Notebook, Pythongs run ETL**
+- **Notebook, Python run ETL**
 
 | **Python Files**          | **Meaning** |
 |-------------------|-------------- |

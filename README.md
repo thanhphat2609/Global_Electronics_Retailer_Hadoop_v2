@@ -1,5 +1,7 @@
 # End to End project Global Electronics Retailer Analysis with Hadoop Ecosystem using Lakehouse(Medallion Architecture).
 
+---
+
 _Table of contents_
 - [**1. Hadoop Ecosystem**](#1-hadoop-ecosystem)
 - [**2. Data Architecture**](#2-data-architecture)
@@ -12,7 +14,8 @@ _Table of contents_
 - [**4. Result**](#4-result)
   * [4.1. Pipeline](#41-pipeline)
   * [4.2. Lakehouse](#42-lakehouse)
- 
+
+--- 
 
 # **1. Hadoop Lakehouse Ecosystem**
 ![image](https://github.com/thanhphat2609/Global_Electronics_Retailer_Hadoop_v2/assets/84914537/56d37d82-6ca3-4c76-af90-90ab3be186fe)
